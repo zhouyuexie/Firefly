@@ -158,7 +158,7 @@ public struct FireflySyntaxEditor: ViewRepresentable {
         if view.theme != theme.wrappedValue {
             view.setTheme(name: theme.wrappedValue)
         }
-        if view.language != language.wrappedValue {
+        if view.language != language.wrappedValue.rawValue {
             view.setLanguage(language: language.wrappedValue)
         }
         if view.fontName != fontName.wrappedValue {
