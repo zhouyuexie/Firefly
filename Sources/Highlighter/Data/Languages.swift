@@ -23,7 +23,7 @@ struct LanguageDefinition {
     )
 }
 
-public enum Language: String {
+public enum Language: String, Identifiable {
     case basic = "Basic"
     case swift = "Swift"
 }
