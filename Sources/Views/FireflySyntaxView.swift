@@ -404,7 +404,7 @@ public class FireflySyntaxView: FireflyView {
     ///   - lineNumbers: If line numbers should be shown or not
     ///   - fontSize: The font size of the editor
     ///   - wrapLines: If the editor should wrap the lines
-    public func setup(theme: String, language: String, font: String, offsetKeyboard: Bool, keyboardOffset: CGFloat, dynamicGutter: Bool, gutterWidth: CGFloat, placeholdersAllowed: Bool, linkPlaceholders: Bool, lineNumbers: Bool, fontSize: CGFloat, wrapLines: Bool, isEditable: Bool) {
+    public func setup(theme: String, language: Language, font: String, offsetKeyboard: Bool, keyboardOffset: CGFloat, dynamicGutter: Bool, gutterWidth: CGFloat, placeholdersAllowed: Bool, linkPlaceholders: Bool, lineNumbers: Bool, fontSize: CGFloat, wrapLines: Bool, isEditable: Bool) {
         self.setLanguage(language: language)
 
         self.fontName = font
