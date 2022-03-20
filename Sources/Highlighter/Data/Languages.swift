@@ -24,6 +24,8 @@ struct LanguageDefinition {
 }
 
 public enum Language: String, Identifiable {
+    public var id: RawValue { rawValue }
+    
     case basic = "Basic"
     case swift = "Swift"
 }
