@@ -430,7 +430,7 @@ public class FireflySyntaxView: FireflyView {
 
         self.setTheme(name: theme)
     
-        self.language = language
+        self._language = language
     }
 
     #endif
