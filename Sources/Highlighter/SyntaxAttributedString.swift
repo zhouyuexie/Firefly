@@ -60,13 +60,13 @@ open class SyntaxAttributedString : NSTextStorage {
     
     /// Initialize the SyntaxAttributedString
     public override init() {
-        self.syntax = Syntax(language: "default", theme: "basic", font: "system")
+        self.syntax = Syntax(language: .basic, theme: "basic", font: "system")
         super.init()
     }
     
     /// Initialize the SyntaxAttributedString
     required public init?(coder: NSCoder) {
-        self.syntax = Syntax(language: "default", theme: "basic", font: "system")
+        self.syntax = Syntax(language: .basic, theme: "basic", font: "system")
         super.init(coder: coder)
     }
     

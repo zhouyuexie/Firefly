@@ -14,8 +14,16 @@ import UIKit
 public class FireflySyntaxView: FireflyView {
     
     ///The highlighting language
+    internal var _language: Language = .basic
     @IBInspectable
-    internal var language: String = "default"
+    internal var language: String {
+        get {
+            _language.rawValue
+        }
+        set (newValue) {
+            _language = Language(rawValue: newValue) ?? .basic
+        }
+    }
     
     @IBInspectable
     internal var theme: String = "Basic"
@@ -137,7 +145,7 @@ public class FireflySyntaxView: FireflyView {
     #endif
         
     /// This is what does the highlighting. It handles all the text storage
-    internal var textStorage = SyntaxAttributedString(syntax: Syntax(language: "default", theme: "Basic", font: "system"))
+    internal var textStorage = SyntaxAttributedString(syntax: Syntax(language: .basic, theme: "Basic", font: "system"))
     
     /// Handles how the editor is laid out.
     /// On iOS it handles the line numbers + placeholders
@@ -355,7 +363,7 @@ public class FireflySyntaxView: FireflyView {
     ///   - lineNumbers: If line numbers should be shown or not
     ///   - fontSize: The font size of the editor
     ///   - isReadOnly: If the view is read only
-    public func setup(theme: String, language: String, font: String, offsetKeyboard: Bool, keyboardOffset: CGFloat, dynamicGutter: Bool, gutterWidth: CGFloat, placeholdersAllowed: Bool, linkPlaceholders: Bool, lineNumbers: Bool, fontSize: CGFloat, isEditable: Bool) {
+    public func setup(theme: String, language: Language, font: String, offsetKeyboard: Bool, keyboardOffset: CGFloat, dynamicGutter: Bool, gutterWidth: CGFloat, placeholdersAllowed: Bool, linkPlaceholders: Bool, lineNumbers: Bool, fontSize: CGFloat, isEditable: Bool) {
         self.setLanguage(language: language)
 
         self.fontName = font
@@ -378,8 +386,8 @@ public class FireflySyntaxView: FireflyView {
         self.setTheme(name: theme)
         
         self.setIsEditable(isEditable: isEditable)
-    
-        self.language = language
+
+        self._language = language
     }
     #elseif canImport(AppKit)
     /// Used to setup the entire firefly view on macOS
@@ -443,8 +451,8 @@ public class FireflySyntaxView: FireflyView {
     
     /// Sets the language that is highlighted
     /// - Parameter language: The name of the new language
-    public func setLanguage(language: String) {
-        self.language = language
+    public func setLanguage(language: Language) {
+        self._language = language
         textStorage.syntax.setLanguage(to: language)
         #if canImport(AppKit)
         textView.lineNumberView.theme = textStorage.syntax.theme
@@ -660,8 +668,8 @@ extension FireflySyntaxView {
     }
     
     /// Returns the name of every available theme
-    static public func availableLanguages() -> [String] {
-        var arr: [String] = []
+    static public func availableLanguages() -> [Language] {
+        var arr: [Language] = []
         for item in languages {
             arr.append(item.key)
         }

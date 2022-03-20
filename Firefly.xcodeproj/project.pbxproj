@@ -33,6 +33,7 @@
 		4BE75CBD268FB16200B3070B /* Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE75CA3268FB16200B3070B /* Languages.swift */; };
 		4BE75CBE268FB16200B3070B /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE75CA5268FB16200B3070B /* Token.swift */; };
 		4BE75CC0268FB1AD00B3070B /* KeyCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BE75CBF268FB1AD00B3070B /* KeyCommand.swift */; };
+		64A46F26CD5FCFCF74E6864A /* swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A46A611491842242210F8B /* swift.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		4BE75CA3268FB16200B3070B /* Languages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Languages.swift; sourceTree = "<group>"; };
 		4BE75CA5268FB16200B3070B /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		4BE75CBF268FB1AD00B3070B /* KeyCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCommand.swift; sourceTree = "<group>"; };
+		64A46A611491842242210F8B /* swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = swift.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			children = (
 				4BE75CA2268FB16200B3070B /* Themes.swift */,
 				4BE75CA3268FB16200B3070B /* Languages.swift */,
+				64A465F8F7CB5C49FC33F4DD /* Languages */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -195,6 +198,14 @@
 				4BE75CBF268FB1AD00B3070B /* KeyCommand.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		64A465F8F7CB5C49FC33F4DD /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				64A46A611491842242210F8B /* swift.swift */,
+			);
+			path = Languages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,6 +311,7 @@
 				4BE75CAC268FB16200B3070B /* Comparable + Clamped.swift in Sources */,
 				4BE75CA9268FB16200B3070B /* String+NSRange.swift in Sources */,
 				4BE75CB4268FB16200B3070B /* UIAppKitBirdge.swift in Sources */,
+				64A46F26CD5FCFCF74E6864A /* swift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

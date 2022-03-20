@@ -16,7 +16,7 @@ public struct FireflySyntaxEditor: ViewRepresentable {
     
     @Binding var text: String
     
-    var language: Binding<String>
+    var language: Binding<Language>
     var theme: Binding<String>
     var fontName: Binding<String>
 
@@ -51,7 +51,7 @@ public struct FireflySyntaxEditor: ViewRepresentable {
     /// Initializer for UIKit based implementations
     public init(
         text: Binding<String>,
-        language: Binding<String> = .constant("default"),
+        language: Binding<Language> = .constant(.basic),
         theme: Binding<String> = .constant("Basic"),
         fontName: Binding<String> = .constant("system"),
         fontSize: Binding<CGFloat> = .constant(FireflyFont.systemFontSize),
@@ -106,7 +106,7 @@ public struct FireflySyntaxEditor: ViewRepresentable {
     /// Initializer for AppKit based implementations
     public init(
         text: Binding<String>,
-        language: Binding<String> = .constant("default"),
+        language: Binding<Language> = .constant(.basic),
         theme: Binding<String> = .constant("Basic"),
         fontName: Binding<String> = .constant("system"),
         fontSize: Binding<CGFloat> = .constant(FireflyFont.systemFontSize),

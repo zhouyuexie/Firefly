@@ -24,7 +24,7 @@ public class Markdown {
     ///   - shouldTint: If images should be tinted
     ///   - fontSize: The font size of the formatted text
     /// - Returns: An NSMutableString which contains the Markdown Formatted string & and the background color that was used when processing.
-    public static func createAttributedString(input: String, themeName: String, fontName: String, language: String, themeTColor: Bool = false, shouldTint: Bool = false, fontSize: CGFloat = FireflyFont.systemFontSize) -> (string: NSMutableAttributedString, background: FireflyColor) {
+    public static func createAttributedString(input: String, themeName: String, fontName: String, language: Language, themeTColor: Bool = false, shouldTint: Bool = false, fontSize: CGFloat = FireflyFont.systemFontSize) -> (string: NSMutableAttributedString, background: FireflyColor) {
         let fontSize: CGFloat = fontSize
 
         var currentFont = FireflyFont.systemFont(ofSize: fontSize)
